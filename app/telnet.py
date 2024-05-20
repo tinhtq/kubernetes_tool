@@ -1,29 +1,23 @@
 import asyncio
 import telnetlib3
+from template.host import  Host_Info
+from typing import List
 
 
-async def telnet_session(host, port):
+async def telnet_session(telnet_host, telnet_port):
     telnet_connection = True
     try:
-        await telnetlib3.open_connection(host, port)
+        await telnetlib3.open_connection(telnet_host, telnet_port)
     except (asyncio.exceptions.TimeoutError, OSError):
         telnet_connection = False
     return telnet_connection
 
 
-# message = asyncio.run(telnet_welcome_message("10.0.3.183", 22))
-# print(message)
 
-failed_connection = []
-
-with open("server.txt", "r") as file:
-    lines = file.readlines()
-    for line in lines:
-        info = line.split(",")
-        host = info[0]
-        port = int(info[1])
-        connection = asyncio.run(telnet_session(host, port))
+async def multi_host_telnet_session(hosts: List[Host_Info]):
+    failed_connection_host = []
+    for telnet_host in hosts:
+        connection = telnet_session(telnet_host.host, telnet_host.port)
         if not connection:
-            failed_connection.append({"host": host, "port": port})
+            failed_connection_host.append({"host": telnet_host.host, "port": telnet_host.port})
 
-print(failed_connection)
