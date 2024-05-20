@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "297f99a51323263b04e5707fee89fa9cbe16119a006d39a052ec5da249244efc"
+            "sha256": "fab432ac6ad7e00256a6302ada11278cfacae60b5087eacf8095e263582d51c7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -500,6 +500,15 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.37.2"
+        },
+        "telnetlib3": {
+            "hashes": [
+                "sha256:b3c0f984a7fb1b6ee16e6fdaa410c56389b0dc492174a99c6661b1ba4c9d457d",
+                "sha256:dbcbc16456a0e03a62431be7cfefff00515ab2f4ce2afbaf0d3a0e51a98c948d"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==2.0.4"
         },
         "typer": {
             "hashes": [
