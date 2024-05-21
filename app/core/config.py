@@ -63,11 +63,7 @@ class Configs(BaseSettings):
     # PAGE = 1
     # PAGE_SIZE = 20
     # ORDERING = "-id"
-    # Kubernetes
-    K8S_CONTEXT = os.getenv("K8S_CONTEXT")
-    KUBE_API_SERVER = os.getenv("KUBE_API_SERVER")
-    KUBE_CA_CERT = os.getenv("KUBE_CA_CERT")
-    KUBE_API_TOKEN = os.getenv("KUBE_API_TOKEN")
+
     class Config:
         case_sensitive = True
 
