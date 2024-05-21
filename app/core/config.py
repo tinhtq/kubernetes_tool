@@ -15,7 +15,7 @@ class Configs(BaseSettings):
     API: str = "/api"
     # API_V1_STR: str = "/api/v1"
     # API_V2_STR: str = "/api/v2"
-    PROJECT_NAME: str = "fca-api"
+    PROJECT_NAME: str = "k8s-api"
     # ENV_DATABASE_MAPPER: dict = {
     #     "prod": "fca",
     #     "stage": "stage-fca",
@@ -63,7 +63,11 @@ class Configs(BaseSettings):
     # PAGE = 1
     # PAGE_SIZE = 20
     # ORDERING = "-id"
-
+    # Kubernetes
+    K8S_CONTEXT = os.getenv("K8S_CONTEXT")
+    KUBE_API_SERVER = os.getenv("KUBE_API_SERVER")
+    KUBE_CA_CERT = os.getenv("KUBE_CA_CERT")
+    KUBE_API_TOKEN = os.getenv("KUBE_API_TOKEN")
     class Config:
         case_sensitive = True
 

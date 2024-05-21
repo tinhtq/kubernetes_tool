@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from typing import List
 
 from app.dto.host import HostInfo
-from app.services.telnet import multi_host_telnet_session
+from app.services.telnet_service import multi_host_telnet_session
 
 router = APIRouter()
 
