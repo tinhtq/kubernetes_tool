@@ -1,7 +1,8 @@
 import asyncio
 import telnetlib3
-from app.template.host import HostInfo
+
 from typing import List
+from app.template.host import HostInfo
 
 
 async def telnet_session(telnet_host, telnet_port):
