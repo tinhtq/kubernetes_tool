@@ -1,6 +1,6 @@
-from typing import List, TypedDict
+from typing import TypedDict
 
 
-class Host_Info(TypedDict):
+class HostInfo(TypedDict):
     host: str
     port: int

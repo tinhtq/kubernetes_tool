@@ -1,6 +1,6 @@
 import asyncio
 import telnetlib3
-from template.host import  Host_Info
+from app.template.host import HostInfo
 from typing import List
 
 
@@ -13,11 +13,10 @@ async def telnet_session(telnet_host, telnet_port):
     return telnet_connection
 
 
-
-async def multi_host_telnet_session(hosts: List[Host_Info]):
+async def multi_host_telnet_session(hosts: List[HostInfo]):
     failed_connection_host = []
     for telnet_host in hosts:
-        connection = telnet_session(telnet_host.host, telnet_host.port)
-        if not connection:
-            failed_connection_host.append({"host": telnet_host.host, "port": telnet_host.port})
-
+        print(telnet_host.host)
+    #     connection = telnet_session(telnet_host.host, telnet_host.port)
+    #     if not connection:
+    #         failed_connection_host.append({"host": telnet_host.host, "port": telnet_host.port})
