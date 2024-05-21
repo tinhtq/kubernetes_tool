@@ -1,6 +1,7 @@
+import uvicorn
+
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-
 from app.api.routes import routers as routers
 from app.core.config import configs
 
@@ -28,8 +29,12 @@ class AppCreator:
         def root():
             return "service is working"
 
-        self.app.include_router(routers, prefix=configs.API_V2_STR)
+        self.app.include_router(routers)
 
 
 app_creator = AppCreator()
 app = app_creator.app
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host="0.0.0.0", port=8000)
