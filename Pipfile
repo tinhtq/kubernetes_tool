@@ -7,6 +7,8 @@ name = "pypi"
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 telnetlib3 = "*"
+kubernetes = "*"
+cyclonedx-bom = "*"
 
 [dev-packages]
 
